@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    cursor: crosshair;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+}
+
+h1 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 5em;
+    font-weight: 900;   
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Style for the birthday wish box */
+.wish-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    padding: 15px 30px; /* Padding inside the box */
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Comic Neue', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;   
+    transition: all 0.5s ease;
+    width: 400px; /* Set a fixed width for the box */
+    max-width: 80%; /* Ensure the box doesn't exceed 80% of the viewport width */
+    cursor: pointer;
+    margin-top: 40px; /* Added margin at the top to create space */
+    animation: glow 1.5s infinite alternate; /* Apply dynamic glowing effect */
+}
+
+/* Initially, the wish content is hidden */
+.wish-content {
+    display: none;
+    font-size: 1em; /* Font size for the content */
+    font-weight: 400;
+    text-align: left;
+    margin-top: 20px; /* Added margin to the top of the content */
+    line-height: 1.6em;
+    word-break: break-word; /* Break long words */
+}
+
+/* Hover effect to expand the box and show the content */
+.wish-box:hover {
+    width: 600px; /* Adjusted width when hovered */
+    max-width: 80%; /* Still prevent it from going over 80% of the viewport width */
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+/* Dynamic glowing effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff8d00, 0 0 15px #ff8d00;
+    }
+    100% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff8d00, 0 0 40px #ff8d00;
+    }
+}
+
+.wish-box:hover .wish-content {
+    display: block;
+}
+
+/* Optional: Hide title on hover */
+.wish-box:hover .wish-title {
+    display: none;
+}
